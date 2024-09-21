@@ -40,4 +40,18 @@ Then i got the average duaration of each song and order it by popularity to see 
 SELECT AVG(duration_ms), artist_name, track_name, popularity
 FROM BIT_DB.Spotifydata
 GROUP BY artist_name
-ORDER BY popularity DESC
+ORDER BY popularity DESC;
+
+I used SQL to see how many songs had a popularity rating over 90 using this:
+
+SELECT COUNT(popularity)
+FROM BIT_DB.Spotifydata
+WHERE popularity> 90;
+
+Then i used SQL to see if there was any correlation between danceability, and popularity.
+
+SELECT artist_name, track_name, popularity, danceability
+FROM BIT_DB.Spotifydata
+WHERE danceability> 0.75 
+AND popularity > 85
+Order BY danceability DESC;
