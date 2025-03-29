@@ -24,3 +24,26 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+
+Write a SQL query that orders the items by price.
+
+SELECT item_name, price FROM superstore
+Order by price ASC;
+
+Write your own SQL query that will show a statistic about the item prices, like a sum, average, minimum, maximum, or count.
+
+SELECT category , AVG(price) 
+FROM superstore
+WHERE category = 'Electronics';
+
+Write your own SQL query that will show a statistic about the price for items in the category of "Kitchen Supplies"
+
+SELECt category, MAX(price)
+FROM superstore
+WHERE category = 'Kitchen Supplies';
+
+Write a SQL query that finds item name, and category with the price being between 60 and 90
+
+SELECT item_name, category, price FROM superstore
+WHERE price BETWEEN  60 AND 90
